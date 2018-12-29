@@ -9,6 +9,8 @@
 // @grant		   GM_xmlhttpRequest
 
 // @include        *.ogame*gameforge.com/game/index.php?page=*
+// @include        *127.0.0.1*/bots/*/browser/html/*?page=*
+// @include        *.ogame.ninja/bots/*/browser/html/*?page=*
 // ==/UserScript==
 
 	var Version = '1.4.9';
@@ -3593,7 +3595,7 @@ else
 		
 	// Language detection from Ogame Fleet Tools
 	  var url = document.location.href;
-	  var server = url.match(/http:\/\/([^\\\/]+[\\\/])/i);
+	  var server = url.match(/(-)([^\\\?]+[\\\?])/g);
 	  
 	  if (server) server = server[1].toUpperCase();
 	  server = server.replace(/\\/i, '/');

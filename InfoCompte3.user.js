@@ -15,6 +15,8 @@
 // @downloadURL https://openuserjs.org/install/benneb/InfoCompte3.user.js
 
 // @include     	*.ogame*gameforge.com/game/index.php?page=*
+// @include        *127.0.0.1*/bots/*/browser/html/*?page=*
+// @include        *.ogame.ninja/bots/*/browser/html/*?page=*
 
 // @exclude        *.ogame*gameforge.com/game/index.php?page=displayMessageNewPage*
 // ==/UserScript==
@@ -516,7 +518,7 @@ function InfoCompteScript()
 		}
 	if(true)
 	{
-		if (((url.indexOf('vulca',0))>=0 && url.indexOf('news.php')== -1)) // Site de signature 
+		if (((url.indexOf('wtf_is_this_weird_condition_vulca',0))>=0 && url.indexOf('news.php')== -1)) // Site de signature 
 		{
 			if(/signature/.test(url))
 			{
@@ -810,7 +812,7 @@ function InfoCompteScript()
 			  var url = document.location.href;
 			  //var server = url.match(/(http|https):\/\/([^\\\/]+[\\\/])/i);
 			  
-			  var server = url.match(/(-)([^\\\/]+[\\\/])/g);
+			  var server = url.match(/(-)([^\\\?]+[\\\?])/g);
 			  //console.log(server);
 			  var lang = 'en';
 			  if (server) server = server[0].toUpperCase();
@@ -2623,7 +2625,7 @@ function InfoCompteScript()
 				// ********************************* Points total  *****************************************
 				var tdnode = document.getElementsByTagName('script');
 				
-				var sentence1 =  "index.php?page=highscore";
+				var sentence1 =  "?page=highscore";
 				var decalagePoint = 2;
 				var sentence2 = "(";
 				var sentence3 = ")";
